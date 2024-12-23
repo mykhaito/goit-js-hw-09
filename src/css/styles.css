@@ -34,3 +34,13 @@ body {
 textarea {
   resize: none;
 }
+.nav{
+  display: flex;
+  border: 3px solid black;
+  flex-direction: column;
+  padding: 20px 100px;
+  margin: 20px;
+}
+.nav li{
+  padding: 20px;
+}
