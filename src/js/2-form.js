@@ -5,7 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
     message: '',
   };
   const form = document.querySelector('.feedback-form');
+  const savedData = localStorage.getItem(localStorageKey);
+  if (savedData) {
+    const parsedData = JSON.parse(savedData);
+    formData.email = parsedData.email;
+    formData.message = parsedData.message;
 
+    form.querySelector('input[name="email"]').value = formData.email;
+    form.querySelector('textarea[name="message"]').value = formData.message;
+  }
   form.addEventListener('input', evt => {
     if (evt.target.name === 'email') {
       formData.email = evt.target.value.trim();
